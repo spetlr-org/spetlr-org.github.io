@@ -5,4 +5,7 @@
 title: Spetlr
 description: Placeholder for our upcoming SPark ETL library
 show_downloads: true
-theme: Cayman
+#theme: Cayman
+theme: jekyll-theme-cayman
+
+
