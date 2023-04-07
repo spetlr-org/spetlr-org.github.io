@@ -7,5 +7,4 @@ description: Placeholder for our upcoming SPark ETL library
 show_downloads: true
 #theme: Cayman
 theme: jekyll-theme-cayman
-
-
+markdown: kramdown
