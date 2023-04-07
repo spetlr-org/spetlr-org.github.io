@@ -11,11 +11,11 @@ Test!
 {% endfor %}
 
 
-{% for thing in spetlr/docs %}
+{% for thing in 'spetlr/docs' %}
   {{thing.path}}
 {% endfor %}
 
-{% for thing in spetlr/docs %}
+{% for thing in 'spetlr/docs' %}
   {{thing.content}}
   {% if thing.path contains 'README.md' %}
     {% include_relative thing.path %}
