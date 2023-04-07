@@ -5,7 +5,6 @@ A python SPark ETL libRary (SPETLR) for Databricks
 Test!
 
 
-{% include_relative spetlr/readme.md %}
 
 {% include spetlr/README.md %}
 
