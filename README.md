@@ -6,6 +6,10 @@ Test!
 
 
 {% for thing in spetlr/docs %}
+  {{thing.path}}
+
+
+{% for thing in spetlr/docs %}
   {{thing.content}}
   {% if thing.path contains 'README.md' %}
     {% include_relative thing.path %}
@@ -13,9 +17,3 @@ Test!
   {% endif %}
 {% endfor %}
 
-
-{% for image in site.static_files %}
-    {% if image.path contains readme %}
-        Hello!
-    {% endif %}
-{% endfor %}
