@@ -7,7 +7,7 @@ Test!
 
 {% for thing in spetlr/docs %}
   {{thing.path}}
-
+{% endfor %}
 
 {% for thing in spetlr/docs %}
   {{thing.content}}
