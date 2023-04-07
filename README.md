@@ -4,7 +4,7 @@ A python SPark ETL libRary (SPETLR) for Databricks
 
 Test!
 
-{% raw%}{% for thing in site.static_files %}
+{% for thing in site.static_files %}
   {% if thing.path contains 'readme.md' %}
     Hello!
   {% endif %}
