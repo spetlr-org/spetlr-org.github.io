@@ -5,7 +5,7 @@ A python SPark ETL libRary (SPETLR) for Databricks
 Test!
 
 {% for thing in spetlr/docs %}
-  {{thing.path}}
+  <h1>{{thing.path}}</h1>
 {% endfor %}
 
 {% for thing in spetlr/docs %}
