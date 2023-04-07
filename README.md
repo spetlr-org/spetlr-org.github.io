@@ -7,6 +7,8 @@ Test!
 
 {% include_relative spetlr/readme.md %}
 
+{% include spetlr/README.md %}
+
 {% for thing in site.static_files %}
   {% if thing.path contains 'readme.md' %}
     Hello!
