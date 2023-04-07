@@ -3,5 +3,5 @@
 A python SPark ETL libRary (SPETLR) for Databricks
 
 
-{% include spetlr/docs/configuration %}
+{% include_relative spetlr/docs/configuration.md %}
 
