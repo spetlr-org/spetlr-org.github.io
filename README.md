@@ -2,5 +2,7 @@
 
 A python SPark ETL libRary (SPETLR) for Databricks
 
-{% include_relative spetlr/README.md %}
 
+{% for thing in spetlr/docs %}
+  {% if thing.url contains 'README.md' %}
+    {% include_relative thing %}
