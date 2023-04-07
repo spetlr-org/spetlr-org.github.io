@@ -6,8 +6,9 @@ Test!
 
 
 {% for thing in spetlr/docs %}
+  {{thing.path}}
   {% if thing.path contains 'README.md' %}
     {% include_relative thing.path %}
-    hello
+    {{thing.path}}
   {% endif %}
 {% endfor %}
