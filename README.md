@@ -4,7 +4,7 @@ A python SPark ETL libRary (SPETLR) for Databricks
 
 Test!
 
-{% include_relative /spetlr/docs/readme.md %}
+{% include_relative /spetlr/docs/configuration/readme.md %}
 
 {% for thing in site.static_files %}
   {% if thing.path contains 'readme.md' %}
@@ -18,10 +18,6 @@ Test!
 {% endfor %}
 
 {% for thing in 'spetlr/docs' %}
-  {{thing.content}}
-  {% if thing.path contains 'README.md' %}
-    {% include_relative thing.path %}
-    {{thing.path}}
-  {% endif %}
+    {% include_relative thing.path/readme.md %}
 {% endfor %}
 
