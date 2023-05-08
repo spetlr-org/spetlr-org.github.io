@@ -27,7 +27,6 @@ A python SPark ETL libRary (SPETLR) for Databricks
 
 
 ## Why use SPETLR?
-
 From a developer's perspective:
 
 * ETL framework: A common ETL framework that enables reusable transformations in an object-oriented manner. Standardized structures facilitate cooperation in large teams.
