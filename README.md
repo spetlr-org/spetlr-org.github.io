@@ -180,8 +180,6 @@ SPETLR contributes with the following:
 
 ## Core feature: (O) ETL Framework
 
-See SPETLR docs for full documentation: [Link](/spetlr/docs/etl/README.md)
-
 Short for Orchestrated Extract-Transform-Load is a pattern that takes the ideas behind variations of the Model-View-Whatever design pattern. 
 
 A very short overview of the framework:
