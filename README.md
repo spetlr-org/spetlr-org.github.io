@@ -14,19 +14,6 @@ A python SPark ETL libRary (SPETLR) for Databricks!
 {% endfor %} --->
 
 
-
-<!---{% assign submodule_url = 'https://github.com/username/submodule.git' %}
-
-{% capture md_files %}{% execute 'git ls-remote --heads ' | append: submodule_url | append: ' "*.md"' %}{% endcapture %}
-{% assign md_files = md_files | newline_to_br | split: '<br />' %}
-
-{% for md_file in md_files %}
-  {% capture file_url %}https://raw.githubusercontent.com/username/submodule/master/{{ md_file }}{% endcapture %}
-  {% assign markdown_content = file_url | uri_escape | uri_escape_once | open | strip_newlines %}
-  {{ markdown_content | markdownify }}
-{% endfor %} --->
-
-
 ## Why use SPETLR?
 From a developer's perspective:
 
