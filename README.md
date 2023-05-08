@@ -1,7 +1,8 @@
 # SPETLR Homepage
 
-A python SPark ETL libRary (SPETLR) for Databricks
+A python SPark ETL libRary (SPETLR) for Databricks!
 
+[LINK TO SPETLR](https://github.com/spetlr-org/spetlr)
 
 <!---WIP: Include spetlr docs --->
 <!--- {% for thing in spetlr/docs %}
@@ -187,7 +188,7 @@ A very short overview of the framework:
 * Loader: Saves data
 
 
-![](/spetlr/docs/etl/etl-orchestrator.png)
+![etl orchestrator](/images/etl-orchestrator.png)
 
 ```python
 from spetlr.etl import Extractor, Transformer, Loader, Orchestrator
