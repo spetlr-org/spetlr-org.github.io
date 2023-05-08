@@ -1,0 +1,3 @@
+[submodule "spetlr"]
+	path = spetlr
+	url = https://github.com/spetlr-org/spetlr.git
