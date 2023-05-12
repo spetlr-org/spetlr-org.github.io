@@ -4,7 +4,7 @@
 
 title: Spetlr
 description: A python SPark ETL libRary (SPETLR) for Databricks!
-show_downloads: true
+#show_downloads: true
 #theme: Cayman
 theme: jekyll-theme-cayman
 markdown: kramdown
