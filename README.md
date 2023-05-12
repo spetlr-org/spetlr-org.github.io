@@ -1,12 +1,9 @@
 # SPETLR Homepage
 
 <form action="https://github.com/spetlr-org/spetlr">
-    <input type="submit" value="Go to Google" />
+    <input type="submit" value="Go to SPETLR repo" />
 </form>
 
-<a href="https://google.com" class="button">Go to Google</a>
-
-[LINK TO SPETLR](https://github.com/spetlr-org/spetlr)
 
 <!---WIP: Include spetlr docs --->
 <!--- {% for thing in spetlr/docs %}
