@@ -3,7 +3,7 @@
 #- jekyll-remote-theme # add this line to the plugins list if you already have one
 
 title: Spetlr
-description: Placeholder for our upcoming SPark ETL library
+description: A python SPark ETL libRary (SPETLR) for Databricks!
 show_downloads: true
 #theme: Cayman
 theme: jekyll-theme-cayman
