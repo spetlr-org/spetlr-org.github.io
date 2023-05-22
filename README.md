@@ -1,8 +1,9 @@
 # SPETLR Homepage
 
-A python SPark ETL libRary (SPETLR) for Databricks!
+<form action="https://github.com/spetlr-org/spetlr">
+    <input type="submit" value="Go to SPETLR repo" />
+</form>
 
-[LINK TO SPETLR](https://github.com/spetlr-org/spetlr)
 
 <!---WIP: Include spetlr docs --->
 {% for thing in "spetlr/docs" %}
