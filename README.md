@@ -1,21 +1,14 @@
-# SPETLR Homepage
 
-<form action="https://github.com/spetlr-org/spetlr">
-    <input type="submit" value="Go to SPETLR repo" />
-</form>
-
-
-<!---WIP: Include spetlr docs --->
-<!--- {% for thing in spetlr/docs %}
-  {{thing.content}}
-{% endfor %} --->
-
-<!---{% for thing in spetlr/docs %}
-    {% include_relative thing.path/readme.md %}
-{% endfor %} --->
-
+[![](/logo/spetlr-white_transparent.png)](https://github.com/spetlr-org/spetlr)
 
 ## Why use SPETLR?
+
+<b></b>
+<form action="https://github.com/spetlr-org/spetlr">
+    <input type="submit" value="Go to SPETLR Github repo" />
+</form>
+<b></b>
+
 From a developer's perspective:
 
 * ETL framework: A common ETL framework that enables reusable transformations in an object-oriented manner. Standardized structures facilitate cooperation in large teams.
