@@ -44,7 +44,7 @@ Every table exists in two "places"​:
 
 ![schema_data_code](/images/schema_data_code.png)
 
-The left part (the delta schema in a storage account) is the **actual state** and the left part (Spark SQL code) is the **desired state**.
+The left part (the delta schema in a storage account) is the **actual state** and the right part (Spark SQL code) is the **desired state**.
 
 Let us say, that the ETL process is changed in a new Pull Request. How do we ensure that the new code actually works? How do we ensure that the ETL processes works on the new desired state?
 
@@ -65,7 +65,7 @@ The SPETLR solution is **debug tables**. The process works as follows:
 ### Pull Request problem and the SPETLR solution
 The next question is then: How to create debug tables? 
 
-It is done by introducing dynamic table names. A delta table is not refferenced by the **actual state** name, but instead the code refers to an configurator key:
+It is done by introducing dynamic table names. A delta table is not refferenced by the **actual state** name, but instead the code refers to a configurator key:
 
 ```sql
 -- spetlr.Configurator key: MyDetailsTable
@@ -101,7 +101,7 @@ from spetlr import Configurator
 Configurator().add_resource_path("path/to/sql_files")
 ```
 
-All tables acces needs to use abstractions:
+All tables' access needs to use abstractions:
 
 ```python
 # Dont use
@@ -113,7 +113,7 @@ from spetlr.delta import DeltaHandle
 df = DeltaHandle.from_tc("MyDetailsTable").read()
 ```
 
-The Configurator is a singleton. The `.from_tc()` access the singleton. SQL code gets treated before execution (variables replaced).
+The Configurator is a singleton, and the `.from_tc()` method accesses the singleton. SQL code gets treated before execution (variables replaced).
 
 ### Test execution (debug tables)
 To execute a test:
@@ -149,7 +149,7 @@ MyEtlOrchestrator().execute()
 SPETLR team recommends:
 * Write test data to debug tables
 * Assert on contents from target tables
-  * Can be done be injecting SPETLR-tools's TestHandle
+  * Can be done by injecting SPETLR-tools's TestHandle
 
 ### Summary
 
@@ -213,7 +213,7 @@ from spetlr.etl import Extractor, Transformer, Loader, Orchestrator
 ### Why should you use the SPETLR OETL framework?
 
 * Modular ETL concept for building complex flows
-* Reusability of modules: In stead of writing the same pyspark code again and again, - build it as an SPETLR ETL module that can be reused across multiple ETL workflows.
+* Reusability of modules: Instead of writing the same pyspark code again and again, build it as an SPETLR ETL module that can be reused across multiple ETL workflows.
 * Unit testing: Each extractor, transformer, and loader can be unit-tested individually.
 * Integration testing: The modular design makes it possible to perform integration tests on various combinations of the ETL modules. Use the SPETLR table abstraction to enable debug tables for testing -  [see previous section](#core-feature-table-abstraction).
 
@@ -228,7 +228,7 @@ The object-oriented structure makes it easy to change handlers in the ETL flows 
 
 The handlers are well-tested against real Azure resources to ensure high quality and reliability. They can be used out of the box in various projects without needing extensive customization.
 
-The handlers use primarly PySpark under the hood.  Therefore, the handlers are a convinient way to streamline the process of working with multiple data sources in ETL flows. 
+The handlers use primarly PySpark under the hood.  Therefore, the handlers are a convenient way to streamline the process of working with multiple data sources in ETL flows. 
 
 In the code 
 ```python
