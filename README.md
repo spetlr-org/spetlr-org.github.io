@@ -29,15 +29,16 @@ From a business perspective:
 
 SPETLR has a lot of great tools for working with ETL in Databricks. But to make it easy for you to consider why you need SPETLR here is a list of the core features:
 
-* [Core feature: Table abstraction](#core-feature-table-abstraction)
+* [Core feature: Integration test for Databricks](#core-feature-integration-test-for-databricks)
 * [Core feature: (O) ETL Framework](#core-feature-o-etl-framework)
 * [Core feature: Data source handlers](#core-feature-data-source-handlers)
 
 
+## Core feature: Integration test for Databricks
+SPETLR provides a framework for creating test databases and tables before deploying to production.
+This is a must-have for Lakehouse platform in order to ensure reliable and stable data platforms. 
 
-## Core feature: Table abstraction
-
-### Concept
+### Concept: Table abstractions
 Every table exists in two "places"​:
 * As data – with schema and contents​ (e.g. a delta table in a storage account)
 * As a concept in code (e.g. as Spark SQL code)
