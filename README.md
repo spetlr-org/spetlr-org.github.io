@@ -79,7 +79,7 @@ CREATE TABLE IF NOT EXISTS `my_db1{ID}.details`
 )
 USING DELTA
 COMMENT "Dummy Database 1 details"
-LOCATION "/{MNT}/foo/bar/my_db1/details/";
+LOCATION "/{MNT}/foo/bar/my_db1{ID}/details/";
 ```
 
 The "MyDetailsTable" is used for reference in the SPETLR handler classes (DeltaHandle, SqlHandle, etc.). 
