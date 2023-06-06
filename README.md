@@ -9,6 +9,8 @@
 </form>
 <b></b>
 
+See [SPETLR Documentation](./SPETLR_docs.html).
+
 From a developer's perspective:
 
 * ETL framework: A common ETL framework that enables reusable transformations in an object-oriented manner. Standardized structures facilitate cooperation in large teams.
