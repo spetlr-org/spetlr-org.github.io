@@ -9,6 +9,12 @@
 </form>
 <b></b>
 
+<b></b>
+<form action="https://github.com/spetlr-org/spetlr-tools">
+    <input type="submit" value="Go to SPETLR-tools Github repo" />
+</form>
+<b></b>
+
 See [SPETLR Documentation](./SPETLR_docs.html).
 
 From a developer's perspective:
