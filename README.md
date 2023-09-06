@@ -15,6 +15,8 @@
 </form>
 <b></b>
 
+<b></b>
+
 See [SPETLR Documentation](./SPETLR_docs.html).
 
 From a developer's perspective:
@@ -37,10 +39,68 @@ From a business perspective:
 
 SPETLR has a lot of great tools for working with ETL in Databricks. But to make it easy for you to consider why you need SPETLR here is a list of the core features:
 
-* [Core feature: Integration test for Databricks](#core-feature-integration-test-for-databricks)
 * [Core feature: (O) ETL Framework](#core-feature-o-etl-framework)
+* [Core feature: Integration test for Databricks](#core-feature-integration-test-for-databricks)
 * [Core feature: Data source handlers](#core-feature-data-source-handlers)
 
+
+## Core feature: (O) ETL Framework
+
+Short for Orchestrated Extract-Transform-Load is a pattern that takes the ideas behind variations of the Model-View-Whatever design pattern. 
+
+A very short overview of the framework:
+* Extractor: Reads data
+* Transformer: Transform data
+* Loader: Saves data
+
+
+![etl orchestrator](/images/etl-orchestrator.png)
+
+```python
+from spetlr.etl import Extractor, Transformer, Loader, Orchestrator
+
+(Orchestrator()
+    .extract_from(Extractor())
+    .transform_with(Transformer())
+    .load_into(Loader())
+    .execute())
+```
+
+### Behind the scenes
+
+How do the framework handle the dataframes?
+
+The framework handles the dataframes in a Dataset dictionary: `{key: DataFrame}`. 
+* Dataframes are stored in a dict that flows through the ETL stages
+* Extractor: Adds DataFrame to the dict
+* Transformer Manipulates DataFrame(s) in dict
+* Loader: Save DataFrame from dict to a location (e.g. Delta table)
+
+Example:
+In the code and figure below, you can see an example of how data can flow through the SPETLR ETL framework:
+
+```python
+from spetlr.etl import Extractor, Transformer, Loader, Orchestrator
+
+(Orchestrator()
+    .extract_from(ExtractorE1(dataset_key="E1"))
+    .extract_from(ExtractorE2(dataset_key="E2"))
+    .transform_with(TransformerT1())
+    .transform_with(TransformerT2())
+    .transform_with(TransformerT3())
+    .load_into(LoaderL1())
+    .execute())
+```
+
+![ETL dataset group](/images/ETL_dataset_group.png)
+
+
+### Why should you use the SPETLR OETL framework?
+
+* Modular ETL concept for building complex flows
+* Reusability of modules: Instead of writing the same pyspark code again and again, build it as an SPETLR ETL module that can be reused across multiple ETL workflows.
+* Unit testing: Each extractor, transformer, and loader can be unit-tested individually.
+* Integration testing: The modular design makes it possible to perform integration tests on various combinations of the ETL modules. Use the SPETLR table abstraction to enable debug tables for testing -  [see previous section](#core-feature-table-abstraction).
 
 ## Core feature: Integration test for Databricks
 SPETLR provides a framework for creating test databases and tables before deploying to production.
@@ -166,66 +226,6 @@ SPETLR contributes with the following:
 * Added abstraction on tables​
 * Allows full testing of table creation and ETL code​
 * Good tool support gives minimal added complexity​
-
-
-## Core feature: (O) ETL Framework
-
-Short for Orchestrated Extract-Transform-Load is a pattern that takes the ideas behind variations of the Model-View-Whatever design pattern. 
-
-A very short overview of the framework:
-* Extractor: Reads data
-* Transformer: Transform data
-* Loader: Saves data
-
-
-![etl orchestrator](/images/etl-orchestrator.png)
-
-```python
-from spetlr.etl import Extractor, Transformer, Loader, Orchestrator
-
-(Orchestrator()
-    .extract_from(Extractor())
-    .transform_with(Transformer())
-    .load_into(Loader())
-    .execute())
-```
-
-### Behind the scenes
-
-How do the framework handle the dataframes?
-
-The framework handles the dataframes in a Dataset dictionary: `{key: DataFrame}`. 
-* Dataframes are stored in a dict that flows through the ETL stages
-* Extractor: Adds DataFrame to the dict
-* Transformer Manipulates DataFrame(s) in dict
-* Loader: Save DataFrame from dict to a location (e.g. Delta table)
-
-Example:
-In the code and figure below, you can see an example of how data can flow through the SPETLR ETL framework:
-
-```python
-from spetlr.etl import Extractor, Transformer, Loader, Orchestrator
-
-(Orchestrator()
-    .extract_from(ExtractorE1(dataset_key="E1"))
-    .extract_from(ExtractorE2(dataset_key="E2"))
-    .transform_with(TransformerT1())
-    .transform_with(TransformerT2())
-    .transform_with(TransformerT3())
-    .load_into(LoaderL1())
-    .execute())
-```
-
-![ETL dataset group](/images/ETL_dataset_group.png)
-
-
-### Why should you use the SPETLR OETL framework?
-
-* Modular ETL concept for building complex flows
-* Reusability of modules: Instead of writing the same pyspark code again and again, build it as an SPETLR ETL module that can be reused across multiple ETL workflows.
-* Unit testing: Each extractor, transformer, and loader can be unit-tested individually.
-* Integration testing: The modular design makes it possible to perform integration tests on various combinations of the ETL modules. Use the SPETLR table abstraction to enable debug tables for testing -  [see previous section](#core-feature-table-abstraction).
-
 
 ## Core feature: Data source handlers
 
